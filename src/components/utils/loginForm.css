@@ -1,0 +1,73 @@
+/* General container styling */
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.login-form-container {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  text-align: center; /* Center-aligns all text inside the container */
+}
+
+/* Centering the form on the page */
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Header styling */
+.login-form-header {
+  margin-bottom: 20px;
+}
+
+.login-form-header h1 {
+  font-size: 24px;
+  color: #333;
+  margin: 0; /* Remove default margin */
+}
+
+/* Input container styling */
+.input-container {
+  margin-bottom: 15px;
+}
+
+/* Input styling */
+.input-box {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Button container styling */
+.button-container {
+  margin-top: 20px;
+}
+
+/* Button styling */
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}

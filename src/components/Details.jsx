@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import fetchMovie from "./fetchMovie";
+import fetchMovie from "./utils/fetchMovie";
 import { useQuery } from "@tanstack/react-query";
 import ErrorBoundary from "./ErrorBoundary";
 

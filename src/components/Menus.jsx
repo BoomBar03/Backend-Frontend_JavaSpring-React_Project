@@ -1,31 +1,31 @@
 import React, { useEffect, useState } from "react";
-import fetchMoviesList from "./fetchMovies";
+import fetchMenusList from "./utils/fetchMenusList";
 import { Link } from "react-router-dom";
 import { NavbarElement } from "./Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const MoviesElement = () => {
-  const [movies, setMovies] = useState([]);
+const MenusElement = () => {
+  const [menus, setMenus] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const getMovies = async () => {
+    const getMenus = async () => {
       try {
-        const data = await fetchMoviesList();
-        setMovies(data);
+        const data = await fetchMenusList();
+        setMenus(data);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching movies:", error);
+        console.error("Error fetching menus:", error);
         setLoading(false);
       }
     };
-    getMovies();
+    getMenus();
   }, []);
 
   if (loading) {
     return (
       <div className="loading-pane">
-        <h2 className="loader">🎬</h2>
+        <h2 className="loader">🍿</h2>
       </div>
     );
   }
@@ -35,25 +35,22 @@ const MoviesElement = () => {
       <div className="row">
         <NavbarElement />
         <header>
-          <h1>Available Movies</h1>
+          <h1>Menus</h1>
         </header>
         <header>
           <Link to="/home">Movie Ticket Store</Link>
         </header>
-        {movies.map((item) => (
+        {menus.map((item) => (
           <div className="col-md-4 mb-4" key={item.id}>
             <div className="card h-100">
               <div className="card-body">
-                <h5 className="card-title">{item.title}</h5>
+                <h5 className="card-title">{item.menu}</h5>
                 <p className="card-text">
-                  <strong>Ticket Price:</strong> ${item.ticketPrice}
+                  <strong>Description:</strong> {item.description}
                 </p>
                 <p className="card-text">
-                  <strong>Genre:</strong> {item.genre}
+                  <strong>Price:</strong> ${item.price}
                 </p>
-                <Link to={`/details/${item.id}`} className="btn btn-primary">
-                  View Details
-                </Link>
               </div>
             </div>
           </div>
@@ -63,4 +60,4 @@ const MoviesElement = () => {
   );
 };
 
-export default MoviesElement;
+export default MenusElement;

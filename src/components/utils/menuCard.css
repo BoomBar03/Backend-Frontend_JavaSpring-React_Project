@@ -1,0 +1,18 @@
+.menu-card {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 20px; /* Space between each card */
+}
+
+.menu-card h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.menu-card p {
+  font-size: 18px;
+  margin: 5px 0;
+}
